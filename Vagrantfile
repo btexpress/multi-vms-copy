@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "db" do |db|
     db.vm.hostname = "database-server"
-    web.vm.network "private_network", ip: "192.168.10.3"
+    db.vm.network "private_network", ip: "192.168.10.3"
     db.vm.provision "shell", path: "https://raw.githubusercontent.com/btexpress/vagrant/master/scripts/centos-database.sh"
   end
 
